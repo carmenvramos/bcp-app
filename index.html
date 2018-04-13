@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        #result {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #aaa
+        }
+    </style>
 </head>
 <body>
     <h1> Run some code</h1>
@@ -12,10 +19,11 @@
         square: <input name="power" checked type="radio" value="2">
         cube: <input name="power" type="radio" value="3">
     </div>
-    <input id="input-number" type="number">
+    <input id="input-number" type="number" value="4">
     <button onclick="getSquare()">
         GetSquare
     </button >
+    <div id="result">
     <script>
         function getSquare() {
             var input = document.getElementById('input-number');
@@ -25,6 +33,10 @@
               var exponent = power.value;
               var x =input.value;
               var answer = Math.pow(x,exponent);
+              var result = document.getElementById('result');
+              result.innerHTML = '<em>' + x +  '</em>' + ' to the <em>' + exponent
+                  + 
+              '</em> is <strong>' + answer + '</strong>';
              console.log(x, 'to the', exponent, 'is', answer);
         }
     //getSquare();
